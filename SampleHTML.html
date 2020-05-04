@@ -6,30 +6,30 @@
 
     <!--Materialize CDN-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <title>Example CSS</title>
+    <title>Gamer Station</title>
 
 </head>
 <body>
     <div class="container">
         <!--Website Name-->
-        <div class= "row cyan lighten-3">
-            <h1 style="text-align: center;">Name of the Website</h1>
+        <div class= "row cyan lighten-3" id= "site-name">
+            <h1 style="text-align: center;">Gamer Station</h1>
         </div>
 
         <!--Website Explanation-->
-        <div class= "row  teal lighten-3" style="text-align: center;">
+        <div class= "row  teal lighten-3" style="text-align: center;" id="site-bio">
             <span class="flow-text"> Search a game you wish to learn more about</span>
         </div>
 
         <!--Search Bar-->
-        <div class="card-panel green lighten-3">
+        <div class="card-panel green lighten-3" id= "search-bar">
             <div class="col s8">
             <input type = "text"
             id = "gameTitle"
             value = "Type your game's name here!" />
             </div>
             <div class="col s4">
-            <button type="submit" class="btn btn-default">Search!</button>
+            <button type="submit" class="btn btn-default" id="search-button">Search!</button>
             </div>
         </div>
 
@@ -38,7 +38,7 @@
             <div class="col s12 lime lighten-3"style="text-align: center; ">
                 <span class="flow-text">Information about the Game</span>
             </div>
-            <div class="col s8 pink lighten-3">
+            <div class="col s8 pink lighten-3" id="info-col">
                 <span class="flow-text">Info Col</span>
                 <p> 
                 Game name
@@ -58,11 +58,13 @@
                 <br>
                 Game Release Date
 
+                <br>
+                Game ESRB
                 </p>
         </div>
 
             <!--Side Column for videos about the game-->
-            <div class="col s4 red lighten-3">
+            <div class="col s4 red lighten-3" id="video-col">
             <span class="flow-text">Video Col</span>
                 <div class="row">
                     <p>Video 1</p> 
@@ -79,7 +81,7 @@
     </div>
 
             <!--Game Reviews-->
-            <div class="card-panel blue lighten-3">
+            <div class="card-panel blue lighten-3" id="reviews">
             <h4>Reviews</h4>
             </div>
 
