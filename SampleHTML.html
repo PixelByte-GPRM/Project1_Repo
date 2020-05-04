@@ -6,30 +6,44 @@
 
     <!--Materialize CDN-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <title>Gamer Station</title>
+    <title>Example CSS</title>
 
 </head>
 <body>
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">GA</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#">Search</a></li>
+            <li><a href="#">Info</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Twitch Streams</a></li>
+            <li><a href="#">More Like This</a></li>
+          </ul>
+        </div>
+      </nav>
+            
     <div class="container">
         <!--Website Name-->
-        <div class= "row cyan lighten-3" id= "site-name">
-            <h1 style="text-align: center;">Gamer Station</h1>
+        <div class= "row cyan lighten-3">
+            <h1 style="text-align: center;">Name of the Website</h1>
         </div>
 
         <!--Website Explanation-->
-        <div class= "row  teal lighten-3" style="text-align: center;" id="site-bio">
+        <div class= "row  teal lighten-3" style="text-align: center;">
             <span class="flow-text"> Search a game you wish to learn more about</span>
         </div>
 
         <!--Search Bar-->
-        <div class="card-panel green lighten-3" id= "search-bar">
+        <div class="card-panel green lighten-3">
             <div class="col s8">
             <input type = "text"
             id = "gameTitle"
             value = "Type your game's name here!" />
             </div>
             <div class="col s4">
-            <button type="submit" class="btn btn-default" id="search-button">Search!</button>
+            <button type="submit" class="btn btn-default">Search!</button>
             </div>
         </div>
 
@@ -38,7 +52,7 @@
             <div class="col s12 lime lighten-3"style="text-align: center; ">
                 <span class="flow-text">Information about the Game</span>
             </div>
-            <div class="col s8 pink lighten-3" id="info-col">
+            <div class="col s8 pink lighten-3">
                 <span class="flow-text">Info Col</span>
                 <p> 
                 Game name
@@ -58,13 +72,11 @@
                 <br>
                 Game Release Date
 
-                <br>
-                Game ESRB
                 </p>
         </div>
 
             <!--Side Column for videos about the game-->
-            <div class="col s4 red lighten-3" id="video-col">
+            <div class="col s4 red lighten-3">
             <span class="flow-text">Video Col</span>
                 <div class="row">
                     <p>Video 1</p> 
@@ -81,11 +93,21 @@
     </div>
 
             <!--Game Reviews-->
-            <div class="card-panel blue lighten-3" id="reviews">
+            <div class="card-panel blue lighten-3">
             <h4>Reviews</h4>
             </div>
 
-
-</div>
+<!-- Footer  -->
+    </div>
+    <footer class="page-footer">
+        <div class="container">
+        </div>
+        <div class="footer-copyright">
+        <div class="container">
+        © 2020 Copyright Text
+        <a class="grey-text text-lighten-4 right" href="#!">Name of Website</a>
+        </div>
+        </div>
+    </footer>
 </body>
 </html>
