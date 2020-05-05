@@ -1,3 +1,4 @@
+
 var searchTerm= "";
 var title = "";
 $("#button-search").on("click", function(){
@@ -19,6 +20,7 @@ var settings = {
 $.ajax(settings).done(function (response) {
     console.log(response);
 
+
 }).then( function(response)
 {
     var image= response.background_image;
@@ -31,4 +33,5 @@ $(".game-date").html(response.released);
 
 });
 });
+
 
