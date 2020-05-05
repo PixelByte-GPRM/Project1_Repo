@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!--Materialize CDN-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <title>Gamer Station</title>
@@ -13,12 +12,12 @@
     <!-- Navbar -->
     <nav>
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo">GA</a>
+          <a href="#" class="brand-logo">Gamer Station</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="#">Search</a></li>
-            <li><a href="#">Info</a></li>
-            <li><a href="#">Reviews</a></li>
-            <li><a href="#">Twitch Streams</a></li>
+            <li><a href="#search">Search</a></li>
+            <li><a href="#game-info">Info</a></li>
+            <li><a href="#game-reviews">Reviews</a></li>
+            <li><a href="#game-videos">Twitch Streams</a></li>
             <li><a href="#">More Like This</a></li>
           </ul>
         </div>
@@ -26,17 +25,17 @@
             
     <div class="container">
         <!--Website Name-->
-        <div class= "row cyan lighten-3">
+        <div class= "card-panel cyan lighten-3">
             <h1 style="text-align: center;">Gamer Station</h1>
         </div>
 
         <!--Website Explanation-->
-        <div class= "row  teal lighten-3" style="text-align: center;" id= "site-bio">
+        <div class= "card-panel teal lighten-3" style="text-align: center;" id= "site-bio">
             <span class="flow-text"> Search a game you wish to learn more about</span>
         </div>
 
         <!--Search Bar-->
-        <div class="card-panel green lighten-3">
+        <div class="card-panel green lighten-3" id= "search">
             <div class="col s8">
             <input type = "text"
             id = "gameTitle"
@@ -99,6 +98,10 @@
             <h4>Reviews</h4>
             </div>
 
+            <div class="card-panel purple lighten-3" id= "game-related">
+                <h4>Related Games</h4>
+                </div>
+
 
 <!-- Footer  -->
     </div>
@@ -112,10 +115,8 @@
         </div>
         </div>
     </footer>
-    
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-
     <script src= "script.js"></script>
 
 </body>
