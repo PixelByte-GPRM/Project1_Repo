@@ -3,102 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!--Materialize CDN-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
     <title>Gamer Station</title>
 
 </head>
-<body>
+<body class="grey lighten-2"">
     <!-- Navbar -->
     <nav>
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo">Gamer Station</a>
+          <a href="#" class="brand-logo" style= "margin-left: 100px"><i class="fas fa-gamepad"> Gamer Station</i></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="#search">Search</a></li>
-            <li><a href="#game-info">Info</a></li>
-            <li><a href="#game-reviews">Reviews</a></li>
-            <li><a href="#game-videos">Twitch Streams</a></li>
-            <li><a href="#">More Like This</a></li>
+            <li><a href="#search"><i class="fas fa-search"></i></a></li>
+            <li><a href="#game-info"><i class="fas fa-info"></i></a></li>
+            <li><a href="#game-reviews"><i class="fas fa-star"></i></a></li>
+            <li><a href="#game-videos"><i class="fab fa-twitch"></i></a></li>
+            <li><a href="#"><i class="fas fa-ellipsis-h"></i></a></li>
           </ul>
         </div>
       </nav>
             
     <div class="container">
         <!--Website Name-->
-        <div class= "card-panel cyan lighten-3">
-            <h1 style="text-align: center;">Gamer Station</h1>
+        <div class= "card-panel amber lighten-2">
+            <h1 class="center-align;"></h1><i class="fas fa-gamepad center"> Gamer Station</i>
         </div>
 
         <!--Website Explanation-->
-        <div class= "card-panel teal lighten-3" style="text-align: center;" id= "site-bio">
+        <div class= "card-panel amber lighten-2"" style="text-align: center;" id= "site-bio">
             <span class="flow-text"> Search a game you wish to learn more about</span>
         </div>
 
         <!--Search Bar-->
-        <div class="card-panel green lighten-3" id= "search">
+        <div class="card-panel amber lighten-2"" id= "search">
             <div class="col s8">
             <input type = "text"
             id = "gameTitle"
-            value = "Type your game's name here!" />
+            value = "Search"/>
             </div>
             <div class="col s4">
-            <button type="submit" class="btn btn-default" id="button-search">Search!</button>
+            <button type="submit" class="btn btn-default orange" style="font: black;" id="button-search">Search!</button>
             </div>
         </div>
 
         <!--Game Information-->
         <div class="row">
-            <div class="col s12 lime lighten-3"style="text-align: center;" ">
+            <div class="col s12 amber lighten-2"style="text-align: center;" >
                 <span class="flow-text">Information about the Game</span>
             </div>
-            <div class="col s8 pink lighten-3"id="game-info">
+            <div class="col s12 amber lighten-2"  id="game-info">
                 <span class="flow-text">Info Col</span>
                 <p> 
-                Game name
+                <div class="game-name"></div>
 
                 <br>
-                Game Genre
+                <div class="game-genre"></div>
 
                 <br>
-                Game Image
+                <div class="game-image"></div>
 
                 <br>
-                Game Price
+                <div class="game-price"></div>
 
                 <br>
-                Game Desc
+                <div class="game-desc"></div>
 
                 <br>
-                Game Release Date
+                <div class="game-date"></div>
 
                 <br>
                 Game ESRB
                 </p>
+            </div>
         </div>
-
             <!--Side Column for videos about the game-->
-            <div class="col s4 red lighten-3" id="game-videos">
-            <span class="flow-text">Video Col</span>
-                <div class="row">
-                    <p>Video 1</p> 
-                </div>
-                
-                <div class="row">
-                    <p>Video 2</p> 
-                </div>
-
-                <div class="row">
-                    <p>Video 3</p> 
+            <div class="card-panel amber lighten-2"" id="game-videos">
+            <h5 style="text-align: center;">Videos</h5>
+                <div class="col s12 center-align">
+                    <table class="centered">
+                        <tbody>
+                        <tr>
+                        <td>video1</td>
+                        <td>video1</td>
+                        <td>video1</td>
+                        </tr>
+                    </tbody>
+                    </table>
                 </div>
             </div>
-    </div>
+    
 
             <!--Game Reviews-->
-            <div class="card-panel blue lighten-3" id= "game-reviews">
+            <div class="card-panel amber lighten-2"" id= "game-reviews">
             <h4>Reviews</h4>
             </div>
 
-            <div class="card-panel purple lighten-3" id= "game-related">
+            <div class="card-panel amber lighten-2"" id= "game-reviews">
                 <h4>Related Games</h4>
                 </div>
 
