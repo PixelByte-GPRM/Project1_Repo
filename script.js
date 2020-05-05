@@ -6,6 +6,7 @@ $("#button-search").on("click", function(){
 searchTerm =$("#gameTitle") .val() .trim(); 
 console.log(searchTerm)  
 searchTerm= searchTerm.replace(/\s+/g,'-').toLowerCase();
+
 var settings = {
     
 	"async": true,
@@ -17,14 +18,17 @@ var settings = {
 		"x-rapidapi-key": "167c3ce9f6msh8d7bb8fbc6d5f58p16260djsn0fddb96bb0f5"
 	}
 }
-$.ajax(settings).done(function (response) {
-    console.log(response);
+$.ajax(settings)
+.done(function (gameInfo){
+    console.log(gameInfo);
+    console.log(gameInfo.response.name);
+// $.ajax(settings).done(function (response) {
+
 }).then(); 
+
+var $articleList = $("<ul>");
+    $articleList.addClass("list-group");
 });
-
-
-
-
 
 
 
