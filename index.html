@@ -13,6 +13,8 @@
 
 </head>
 <body class="grey lighten-2">
+
+
     <!-- Navbar -->
     <nav>
         <div class="nav-wrapper">
@@ -22,7 +24,7 @@
             <li><a href="#game-info"><i class="fas fa-info"></i></a></li>
             <li><a href="#game-reviews"><i class="fas fa-star"></i></a></li>
             <li><a href="#game-videos"><i class="fab fa-youtube"></i></a></li>
-            <li><a href="#related-games"><i class="fas fa-ellipsis-h"></i></a></li>
+            <li><a href="#"><i class="fas fa-ellipsis-h"></i></a></li>
           </ul>
         </div>
       </nav>
@@ -30,7 +32,7 @@
     <div class="container">
         <!--Website Name-->
         <div class= "card-panel amber lighten-2">
-            <h1 class="gamer-station-header" style= "text-align: center;"><i class="fas fa-gamepad center"> Gamer Station</i></h1>
+             <h1 class="gamer-station-header" style= "text-align: center;"><i class="fas fa-gamepad center"> Gamer Station</i></h1>
         </div>
 
         <!--Website Explanation-->
@@ -56,15 +58,14 @@
                 <span class="flow-text">Information about the Game</span>
             </div>
             <div class="col s12 amber lighten-2"  id="game-info">
-                <span class="flow-text">Info Col</span>
                 <p> 
-                <div class="game-name"></div>
+                <div class="game-name" style="font-size: 40px;"></div>
 
                 <br>
                 <div class="game-genre"></div>
 
                 <br>
-                <div class="game-image"></div>
+                <div id="game-image"></div>
 
                 <br>
                 <div class="game-price"></div>
@@ -76,7 +77,7 @@
                 <div class="game-date"></div>
 
                 <br>
-                Game ESRB
+                <div class="game-esrb"></div>
                 </p>
             </div>
         </div>
@@ -84,15 +85,7 @@
             <div class="card-panel amber lighten-2" id="game-videos">
             <h5 style="text-align: center;">Videos</h5>
                 <div class="col s12 center-align">
-                    <table class="centered">
-                        <tbody>
-                        <tr>
-                        <td>video1</td>
-                        <td>video1</td>
-                        <td>video1</td>
-                        </tr>
-                    </tbody>
-                    </table>
+                    <iframe id="player"></iframe>
                 </div>
             </div>
     
@@ -102,7 +95,7 @@
             <h4>Reviews</h4>
             </div>
 
-            <div class="card-panel amber lighten-2" id= "related-games">
+            <div class="card-panel amber lighten-2" id= "game-reviews">
                 <h4>Related Games</h4>
                 </div>
 
@@ -114,14 +107,15 @@
         </div>
         <div class="footer-copyright">
         <div class="container">
-        © 2020 Copyright
+        © 2020 Copyright (Not actually but why not)
         <a class="grey-text text-lighten-4 right" href="#!">Gamer Station</a>
         </div>
         </div>
     </footer>
+
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
     <script src= "script.js"></script>
-
+   
 </body>
 </html>
