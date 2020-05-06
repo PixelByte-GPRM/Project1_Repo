@@ -1,11 +1,18 @@
 
 var searchTerm= "";
 var title = "";
+var newImage;
+
+
+
 $("#button-search").on("click", function(){
 
 searchTerm =$("#gameTitle") .val() .trim(); 
 console.log(searchTerm)  
 searchTerm= searchTerm.replace(/\s+/g,'-').toLowerCase();
+searchTerm= searchTerm.replace(":",'').toLowerCase();
+newImage = $("<img>");
+
 var settings = {
     
 	"async": true,
@@ -21,52 +28,39 @@ $.ajax(settings).done(function (response) {
 
 }).then( function(response)
 {
-    var image= response.background_image;
+	$(".game-price").empty();
+	$(".game-genre").empty();
+	$(".image").remove();
+
+	var image= response.background_image;
+	
 $(".game-name").html(response.name);
-$(".game-genre").html(response.genres);
-$(".game-price").html(response.stores[0].store.name);
-$(".game-desc").html(response.description);
-$(".game-date").html(response.released);
 
-  // Load the IFrame Player API code asynchronously.
-//   var tag = document.createElement('script');
-//   tag.src = "https://www.youtube.com/player_api";
-//   var firstScriptTag = document.getElementsByTagName('script')[0];
-//   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+$(".game-genre").html("Game Genre(s): | ");
+for(var j=0; j<response.genres.length; j++)
+{
+	$(".game-genre").append(response.genres[j].name+ " | ");
+}
 
-  // Replace the 'ytplayer' element with an <iframe> and
-  // YouTube player after the API code downloads.
-  var player;
-  function onYouTubePlayerAPIReady() {
-    player = new YT.Player('ytplayer', {
-      height: '360',
-      width: '640',
-      videoId: response.clip.video,  
-    });
-    console.log(videoId);
-  }
+$(".game-price").html("Online Store(s): | ");
+for(var i=0; i<response.stores.length; i++)
+{
+	$(".game-price").append(response.stores[i].store.name + " | ");
+}
 
-   // 4. The API will call this function when the video player is ready.
-   function onPlayerReady(event) {
-     event.target.playVideo();
-   }
+newImage.attr("src", image);
+newImage.attr("class", "image");
+newImage.attr("alt", "Image for the game");
+newImage.attr("width", "400px");
+newImage.attr("height", "300px");
+$("#game-image").prepend(newImage);
 
-   // 5. The API calls this function when the player's state changes.
-   //    The function indicates that when playing a video (state=1),
-   //    the player should play for six seconds and then stop.
-   var done = false;
-   function onPlayerStateChange(event) {
-     if (event.data == YT.PlayerState.PLAYING && !done) {
-       setTimeout(stopVideo, 6000);
-       done = true;
-     }
-   }
-   function stopVideo() {
-     player.stopVideo();
-   }
+
+$(".game-date").html("Release Date: "+response.released);
+$(".game-desc").html("Description: "+response.description);
+$(".game-esrb").html("ESRB rating: "+response.esrb_rating.name);
+
+
 
 });
 });
-
-
-
