@@ -4,6 +4,14 @@ var title = "";
 var newImage;
 var newVideo;
 
+var input = document.getElementById("gameTitle");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("button-search").click();
+  }
+});
+
 var tag = document.createElement('script');
 
 tag.src = "https://www.youtube.com/iframe_api";
@@ -33,7 +41,7 @@ var settings = {
 }
 $.ajax(settings).done(function (response) {
     console.log(response);
-
+	console.log(settings.url);
 
 }).then( function(response)
 {
@@ -69,16 +77,20 @@ $("#game-image").prepend(newImage);
 $(".game-date").html("Release Date: "+response.released);
 $(".game-desc").html("Description: "+response.description);
 
-
-newVideo.attr("id", "ytplayer");
+if((response.clip)!= null){
 newVideo.attr("class", "videoImage")
+$("#game-videos").show();
+newVideo.attr("id", "ytplayer");
 newVideo.attr("type", "text/html");
 newVideo.attr("width", "400");
 newVideo.attr("height", "300");
 newVideo.attr("src", "https://www.youtube.com/embed/"+response.clip.video+"?enablejsapi=1&color=white");
-
-console.log(newVideo.src);
 $("#video-player").prepend(newVideo);
+}
+else{
+	$("#game-videos").hide();
+}
+
 $(".game-esrb").html("ESRB rating: "+response.esrb_rating.name);
 });
 });
