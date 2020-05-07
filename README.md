@@ -21,7 +21,7 @@ A description for the game
 The release date for the game
 An ESRB for the game (if any)
 A video in a seperate row relating to the game
-If the videos do not exist, then remove the Video section entirely
+If the game does not have a video corresponding with it, remove the video row
 Reviews for the game in a seperate row
 Games that are similar to the one searched for in a seperate row.
 ```
