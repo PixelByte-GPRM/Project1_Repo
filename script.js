@@ -3,6 +3,7 @@ var searchTerm= "";
 var title = "";
 var newImage;
 var newVideo;
+var steamID;
 
 var input = document.getElementById("gameTitle");
 input.addEventListener("keyup", function(event) {
@@ -39,6 +40,7 @@ var settings = {
 		"x-rapidapi-key": "167c3ce9f6msh8d7bb8fbc6d5f58p16260djsn0fddb96bb0f5"
 	}
 }
+
 $.ajax(settings).done(function (response) {
     console.log(response);
 	console.log(settings.url);
@@ -64,6 +66,13 @@ $(".game-price").html("Online Store(s): | ");
 for(var i=0; i<response.stores.length; i++)
 {
 	$(".game-price").append(response.stores[i].store.name + " | ");
+	if(response.stores[i].store.name== "Steam")
+	{
+		var steamLink= response.stores[i].url;
+		console.log(steamLink);
+		steamID= steamLink.slice( 34,-1);
+		console.log(steamID);
+	}
 }
 
 newImage.attr("src", image);
@@ -90,6 +99,23 @@ $("#video-player").prepend(newVideo);
 else{
 	$("#game-videos").hide();
 }
+
+
+
+var steamSettings = {
+    
+	"url": "store.steampowered.com/appreviews/"+steamID+"?json=1",
+	"method": "GET"	
+}
+$.ajax({
+	method: "GET",
+	url:"store.steampowered.com/appreviews/"+steamID+"?json=1"
+}).done(function (response) {
+ console.log(response);
+
+});
+
+
 
 $(".game-esrb").html("ESRB rating: "+response.esrb_rating.name);
 });
