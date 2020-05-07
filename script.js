@@ -2,9 +2,7 @@ var searchTerm= "";
 var title = "";
 var newImage;
 var newVideo;
-var lastSearch= localStorage.getItem("term")
-console.log(localStorage.getItem("term"))
-$(".last-search").html("Your last search: "+localStorage.getItem("term"));
+
 var input = document.getElementById("gameTitle");
 input.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
@@ -22,7 +20,6 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 $("#button-search").on("click", function(){
 
 searchTerm =$("#gameTitle") .val() .trim(); 
-localStorage.setItem("term",searchTerm);
 console.log(searchTerm)  
 searchTerm= searchTerm.replace(/\s+/g,'-').toLowerCase();
 searchTerm= searchTerm.replace(":",'').toLowerCase();
@@ -41,7 +38,6 @@ var settings = {
 		"x-rapidapi-key": "167c3ce9f6msh8d7bb8fbc6d5f58p16260djsn0fddb96bb0f5"
 	}
 }
-
 $.ajax(settings).done(function (response) {
     console.log(response);
 	console.log(settings.url);
@@ -66,14 +62,10 @@ for(var j=0; j<response.genres.length; j++)
 $(".game-price").html("Online Store(s): | ");
 for(var i=0; i<response.stores.length; i++)
 {
-	$(".game-price").append(response.stores[i].store.name + " | ");
-	if(response.stores[i].store.name== "Steam")
-	{
-		var steamLink= response.stores[i].url;
-		console.log(steamLink);
-		steamID= steamLink.slice( 34,-1);
-		console.log(steamID);
-	}
+	console.log(response.stores[i].url)
+	//$(".game-price").append(response.stores[i].store.name + " | ");
+	$(".game-price").append("<a href="+ response.stores[i].url> response.stores[i].store.name + "</a>") + " | ";
+	console.log(response.stores[i].store.name );
 }
 
 newImage.attr("src", image);
@@ -100,7 +92,9 @@ $("#video-player").prepend(newVideo);
 else{
 	$("#game-videos").hide();
 }
+
 $(".game-esrb").html("ESRB rating: "+response.esrb_rating.name);
+
 
 });
 });
