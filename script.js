@@ -109,7 +109,7 @@ var steamSettings = {
 }
 $.ajax({
 	method: "GET",
-	url:"store.steampowered.com/appreviews/"+steamID+"?json=1"
+	url:"https://store.steampowered.com/appreviews/"+steamID+"?json=1"
 }).done(function (response) {
  console.log(response);
 
