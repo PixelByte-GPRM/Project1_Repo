@@ -107,9 +107,10 @@ var steamSettings = {
 	"url": "store.steampowered.com/appreviews/"+steamID+"?json=1",
 	"method": "GET"	
 }
+console.log(steamSettings.url);
 $.ajax({
 	method: "GET",
-	url:"store.steampowered.com/appreviews/"+steamID+"?json=1"
+	url:"https://store.steampowered.com/appreviews/"+steamID+"?json=1"
 }).done(function (response) {
  console.log(response);
 
