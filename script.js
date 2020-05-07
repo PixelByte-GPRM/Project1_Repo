@@ -93,4 +93,58 @@ else{
 
 $(".game-esrb").html("ESRB rating: "+response.esrb_rating.name);
 });
-});
+});  
+/ (object)
+var reviews ={
+    "async": true,
+    "crossDomain": true,
+    "url": "api.steampowered.com"+searchTerm, 
+    "method":"GET",
+
+}
+// calling the api 
+
+$.ajax(reviews).done(function (count) {
+    console.log(count);
+    console.log(reviews.url);
+
+    // ?count=2&name[0]=SomeNameHere&name[1]=SomeOtherName
+    
+    ?key=8EF41799BE9A54C68CB01FD8A71F437A&input_json={"steamid":76561198060571516}
+    }
+     GET store.steampowered.com/appreviews/<steamId>?json=1 
+
+     http://store.steampowered.com/app/240760/ 
+    
+
+}).then( function(count)
+{
+    $(".game-reviews").empty();  
+}); 
+/ (object)
+var reviews ={
+    "async": true,
+    "crossDomain": true,
+    "url": "api.steampowered.com"+searchTerm, 
+    "method":"GET",
+
+}
+// calling the api 
+
+$.ajax(reviews).done(function (count) {
+    console.log(count);
+    console.log(reviews.url);
+
+    // ?count=2&name[0]=SomeNameHere&name[1]=SomeOtherName
+    
+    ?key=8EF41799BE9A54C68CB01FD8A71F437A&input_json={"steamid":76561198060571516}
+    }
+     GET store.steampowered.com/appreviews/<steamId>?json=1 
+
+     http://store.steampowered.com/app/240760/ 
+    
+
+}).then( function(count)
+{
+    $(".game-reviews").empty();  
+}); 
