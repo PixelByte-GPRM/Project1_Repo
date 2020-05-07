@@ -3,8 +3,9 @@ var searchTerm= "";
 var title = "";
 var newImage;
 var newVideo;
-var steamID;
-
+var lastSearch= localStorage.getItem("term")
+console.log(localStorage.getItem("term"))
+$(".last-search").html("Your last search: "+localStorage.getItem("term"));
 var input = document.getElementById("gameTitle");
 input.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
@@ -22,6 +23,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 $("#button-search").on("click", function(){
 
 searchTerm =$("#gameTitle") .val() .trim(); 
+localStorage.setItem("term",searchTerm);
 console.log(searchTerm)  
 searchTerm= searchTerm.replace(/\s+/g,'-').toLowerCase();
 searchTerm= searchTerm.replace(":",'').toLowerCase();
@@ -99,20 +101,6 @@ $("#video-player").prepend(newVideo);
 else{
 	$("#game-videos").hide();
 }
-
-
-
-
-$.ajax({
-	method: "GET",
-	url:"https://store.steampowered.com/appreviews/"+steamID+"?json=1"
-}).then(function (response) {
- console.log(response);
-
-});
-
-
-
 $(".game-esrb").html("ESRB rating: "+response.esrb_rating.name);
 });
 });
