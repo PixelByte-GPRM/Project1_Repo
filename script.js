@@ -102,15 +102,11 @@ else{
 
 
 
-var steamSettings = {
-    
-	"url": "store.steampowered.com/appreviews/"+steamID+"?json=1",
-	"method": "GET"	
-}
+
 $.ajax({
 	method: "GET",
 	url:"https://store.steampowered.com/appreviews/"+steamID+"?json=1"
-}).done(function (response) {
+}).then(function (response) {
  console.log(response);
 
 });
