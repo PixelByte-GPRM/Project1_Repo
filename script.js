@@ -91,5 +91,6 @@ else{
 }
 
 $(".game-esrb").html("ESRB rating: "+response.esrb_rating.name);
+
 });
 });
