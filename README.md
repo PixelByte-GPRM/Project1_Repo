@@ -22,7 +22,5 @@ The release date for the game
 An ESRB for the game (if any)
 A video in a seperate row relating to the game
 If the game does not have a video corresponding with it, remove the video row
-Reviews for the game in a seperate row
-Games that are similar to the one searched for in a seperate row.
 ```
 [Our GitPage](https://pixelbyte-gprm.github.io/Project1_Repo/)
