@@ -3,8 +3,9 @@ var searchTerm= "";
 var title = "";
 var newImage;
 var newVideo;
-var steamID;
-
+var lastSearch= localStorage.getItem("term")
+console.log(localStorage.getItem("term"))
+$(".last-search").html("Your last search: "+localStorage.getItem("term"));
 var input = document.getElementById("gameTitle");
 input.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
@@ -22,6 +23,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 $("#button-search").on("click", function(){
 
 searchTerm =$("#gameTitle") .val() .trim(); 
+localStorage.setItem("term",searchTerm);
 console.log(searchTerm)  
 searchTerm= searchTerm.replace(/\s+/g,'-').toLowerCase();
 searchTerm= searchTerm.replace(":",'').toLowerCase();
@@ -62,18 +64,22 @@ for(var j=0; j<response.genres.length; j++)
 	$(".game-genre").append(response.genres[j].name+ " | ");
 }
 
-$(".game-price").html("Online Store(s): | ");
+$(".game-stores").html("Online Store(s): | ");
 for(var i=0; i<response.stores.length; i++)
 {
-	$(".game-price").append(response.stores[i].store.name + " | ");
-	if(response.stores[i].store.name== "Steam")
-	{
-		var steamLink= response.stores[i].url;
-		console.log(steamLink);
-		steamID= steamLink.slice( 34,-1);
-		console.log(steamID);
-	}
+	$(".game-stores").append(response.stores[i].store.name + " | ");
+
+	var link = $("<a>");
+link.attr("href", response.stores[i].url);
+link.text(response.stores[i].store.name);
+link.addClass("link");
+$(".game-buy-info").html("Price and reviews for the game:");
+$(".game-price").html(link);
+
 }
+
+
+
 
 newImage.attr("src", image);
 newImage.attr("class", "image");
@@ -99,25 +105,6 @@ $("#video-player").prepend(newVideo);
 else{
 	$("#game-videos").hide();
 }
-
-
-
-var steamSettings = {
-    
-	"url": "store.steampowered.com/appreviews/"+steamID+"?json=1",
-	"method": "GET"	
-}
-console.log(steamSettings.url);
-$.ajax({
-	method: "GET",
-	url:"https://store.steampowered.com/appreviews/"+steamID+"?json=1"
-}).done(function (response) {
- console.log(response);
-
-});
-
-
-
 $(".game-esrb").html("ESRB rating: "+response.esrb_rating.name);
 });
 });
