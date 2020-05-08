@@ -64,18 +64,22 @@ for(var j=0; j<response.genres.length; j++)
 	$(".game-genre").append(response.genres[j].name+ " | ");
 }
 
-$(".game-price").html("Online Store(s): | ");
+$(".game-stores").html("Online Store(s): | ");
 for(var i=0; i<response.stores.length; i++)
 {
-	$(".game-price").append(response.stores[i].store.name + " | ");
-	if(response.stores[i].store.name== "Steam")
-	{
-		var steamLink= response.stores[i].url;
-		console.log(steamLink);
-		steamID= steamLink.slice( 34,-1);
-		console.log(steamID);
-	}
+	$(".game-stores").append(response.stores[i].store.name + " | ");
+
+	var link = $("<a>");
+link.attr("href", response.stores[i].url);
+link.text(response.stores[i].store.name);
+link.addClass("link");
+$(".game-buy-info").html("Price and reviews for the game:");
+$(".game-price").html(link);
+
 }
+
+
+
 
 newImage.attr("src", image);
 newImage.attr("class", "image");
