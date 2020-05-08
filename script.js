@@ -78,9 +78,6 @@ $(".game-price").html(link);
 
 }
 
-
-
-
 newImage.attr("src", image);
 newImage.attr("class", "image");
 newImage.attr("alt", "Image for the game");
